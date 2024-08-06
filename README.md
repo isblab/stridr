@@ -34,7 +34,7 @@ StrIDR webserver: xxxx
 5. DisProt : https://disprot.org/api/search?release=2023_12&show_ambiguous=true&show_obsolete=false&format=tsv&namespace=all&get_consensus=false
 6. IDEAL : https://www.ideal-db.org/download/current/IDEAL.xml.gz  
 
-Add the downloaded data files to the `Database/raw/` directory. The file names must match those specified in 1_disobind_database.py.
+Add the downloaded data files to the `./Database/raw/` directory. The file names must match those specified in 1_disobind_database.py.
 
 
 ### Creating input files for StrIDR construction
@@ -74,9 +74,9 @@ __Author(s):__ Kartik Majila, Shruthi Viswanath
 __Date__: April 7th, 2023
 
 __License:__ [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
-International License.
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+
 
 __Parallelizeable:__ Yes
 
-__Publications:__  Majila, K. et. al. StrIDR: a database of intrinsically disordered regions of proteins with experimentally resolved structures. DOI: []().
+__Publications:__  Majila, K. and Viswanath S. StrIDR: a database of intrinsically disordered regions of proteins with experimentally resolved structures. DOI: []().
