@@ -31,12 +31,13 @@ Add the downloaded data files to the /Database/raw/ directory. The file names mu
 
 ### Creating input files for StrIDR construction
 ```
-python disobind_databases.py
+python 1_download_databases.py -c CORES
 ```
-This script generates the following files thar are used by the downstream script:  
+CORES - number of cores to parallelize on.
+This script generates the following files that are used by the downstream script:  
 <ul>
-	<li>Merged_DIBS_MFIB_Fdb_PDBtot-cdr.csv : csv file combining information from DIBS, MFIB, FuzDB, PDBtot and PDBcdr.</li>
-	<li>Merged_DisProt_IDEAL_MobiDB.csv : csv file combining information from DisProt, IDEAL, and MobiDB.</li>
+	<li>Merged_Uniprot_IDs.txt : file containing UniProt accessions obtained from the aforementioned databases and datasets.</li>
+	<li>Merged_PDB_IDs.txt : txt file containing PDB IDs for all UniProt accessions.</li>
 </ul>
 
 
@@ -56,8 +57,8 @@ python move_to_web_dir
 ```
 cd ../website/dbsite/
 python populate.py
-python manage.py migrate database
+python manage.py migrate
 python manage.py makemigrations database
-python manage.py migrate database
+python manage.py migrate
 ```
 
