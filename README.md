@@ -27,12 +27,14 @@ StrIDR webserver: xxxx
 
 ## Creating StrIDR
 ### Obtain data files from disorder databases and datasets
-1. DIBS : https://dibs.enzim.ttk.mta.hu/downloads/
-2. MFIB : https://mfib.pbrg.hu/downloads.php
-3. FuzDB : https://fuzdb.org/api/entries?&sort_field=entry_id&sort_value=asc&format=tsv
-4. PDBtot and PDBcdr : https://doi.org/10.1016/j.jmb.2020.02.017
-5. DisProt : https://disprot.org/api/search?release=2023_12&show_ambiguous=true&show_obsolete=false&format=tsv&namespace=all&get_consensus=false
-6. IDEAL : https://www.ideal-db.org/download/current/IDEAL.xml.gz  
+| IDR Databases        | Donload URL                                  | File Formet | Date of Access |
+| -------------------- | -----------                                  | ----------- | -------------- |
+| DIBS                 | https://dibs.enzim.ttk.mta.hu/downloads.php  | XML         | 19 Jul, 2024   |
+| MFIB                 | https://mfib.pbrg.hu/downloads.php           | XML         | 19 Jul, 2024   |
+| FuzDB                | https://fuzdb.org/browse/                    | TSV         | 19 Jul, 2024   |
+| DisProt              | https://disprot.org/download                 | TSV         | 19 Jul, 2024   |
+| IDEAL                | https://www.ideal-db.org/download/current/   | XML         | 19 Jul, 2024   |
+
 
 Add the downloaded data files to the `./Database/raw/` directory. The file names must match those specified in 1_disobind_database.py.
 
