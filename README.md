@@ -26,7 +26,7 @@ StrIDR is expected to be useful for gaining insights into the dynamics, folding,
 5. DisProt : https://disprot.org/api/search?release=2023_12&show_ambiguous=true&show_obsolete=false&format=tsv&namespace=all&get_consensus=false
 6. IDEAL : https://www.ideal-db.org/download/current/IDEAL.xml.gz  
 
-Add the downloaded data files to the /Database/raw/ directory. The file names must match those specified in 1_disobind_database.py.
+Add the downloaded data files to the `Database/raw/` directory. The file names must match those specified in 1_disobind_database.py.
 
 
 ### Creating input files for StrIDR construction
@@ -49,7 +49,7 @@ python 2_create_database_dataset_files.py -c CORES
 
 ### Move files to the website directory
 ```
-python move_to_web_dir
+python move_to_web_dir.py
 ```
 
 
