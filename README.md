@@ -34,8 +34,9 @@ StrIDR webserver: xxxx
 | FuzDB                | https://fuzdb.org/browse/                    | TSV         | 19 Jul, 2024   |
 | DisProt              | https://disprot.org/download                 | TSV         | 19 Jul, 2024   |
 | IDEAL                | https://www.ideal-db.org/download/current/   | XML         | 19 Jul, 2024   |
+| PDBtot and PDBcdr    | https://doi.org/10.1016/j.jmb.2020.02.017    | XLSX        | 19 Jul, 2024   |
 
-
+MobiDB entries are downloaded using the MobiDB API.  
 Add the downloaded data files to the `./Database/raw/` directory. The file names must match those specified in 1_disobind_database.py.
 
 
