@@ -11,10 +11,10 @@ StrIDR is expected to be useful for gaining insights into the dynamics, folding,
 
 ![Main_fig]()
 
-## Publication and Data
-* Shreyas Arvindekar, Aditi S Pathak, Kartik Majila, Shruthi Viswanath, __Optimizing representations for integrative structural modeling using Bayesian model selection__, _Bioinformatics_, 40(3),  btae106, 2024, at [DOI](https://doi.org/10.1093/bioinformatics/btae106).
-* Data is deposited in [Zenodo](https://www.doi.org/10.5281/zenodo.10360718)
+## Publication and Website
+Kartik Majila, Shruthi Viswanath, __StrIDR: a database of intrinsically disordered regions of proteins with experimentally resolved structures.__, at DOI: []().
 
+StrIDR webserver: xxxx
 
 ## Dependencies:
 * See `requirements.txt` for Python dependencies
@@ -71,7 +71,7 @@ python manage.py migrate
 ```
 
 ## Information
-__Author(s):__ Shreyas Arvindekar, Shruthi Viswanath
+__Author(s):__ Kartik Majila, Shruthi Viswanath
 
 __Date__: April 7th, 2023
 
@@ -79,10 +79,6 @@ __License:__ [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
 International License.
 
-__Last known good IMP version:__ `not tested`
-
-__Testable:__ Yes
-
 __Parallelizeable:__ Yes
 
-__Publications:__  Arvindekar, S., _et_. al. Optimizing representations for integrative structural modeling using bayesian model selection, Bioinformatics, 40(3),  btae106, 2024. DOI: [10.1093/bioinformatics/btae106](https://doi.org/10.1093/bioinformatics/btae106).
+__Publications:__  Majila, K. et. al. StrIDR: a database of intrinsically disordered regions of proteins with experimentally resolved structures. DOI: []().
