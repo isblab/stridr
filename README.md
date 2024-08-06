@@ -43,10 +43,8 @@ python 1_download_databases.py -c CORES
 ```
 CORES - number of cores to parallelize on.
 This script generates the following files that are used by the downstream script:  
-<ul>
-	<li>Merged_Uniprot_IDs.txt : file containing UniProt accessions obtained from the aforementioned databases and datasets.</li>
-	<li>Merged_PDB_IDs.txt : txt file containing PDB IDs for all UniProt accessions.</li>
-</ul>
+1. [Merged_Uniprot_IDs.txt](./Database/Merged_Uniprot_IDs.txt) : file containing UniProt accessions obtained from the aforementioned databases and datasets.
+2. [Merged_PDB_IDs.txt](./Database/Merged_PDB_IDs.txt) : txt file containing PDB IDs for all UniProt accessions.
 
 
 ### Creating StrIDR database
