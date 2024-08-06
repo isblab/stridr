@@ -9,7 +9,7 @@ StrIDR is a database of IDRs, confirmed via experimental or homology-based evide
 Existing databases provide extensive information for IDRs at the sequence level. However, only a tiny fraction of these IDRs are associated with an experimentally determined protein structure. Moreover, the disordered region of interest could be unresolved even if a structure exists.  
 StrIDR is expected to be useful for gaining insights into the dynamics, folding, and interactions of IDRs. It may provide structural data for computational methods to studying IDRs including molecular dynamics (MD) simulations and machine learning (ML).  
 
-![Main_fig]()
+![Main_fig](static/Fig_1B.png)
 
 ## Publication and Website
 Kartik Majila, Shruthi Viswanath, __StrIDR: a database of intrinsically disordered regions of proteins with experimentally resolved structures.__, at DOI: []().
