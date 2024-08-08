@@ -1,0 +1,40 @@
+Created on: System = b'nty1\n' 	 Date = b'Friday 19 July 2024 11:37:30 PM IST\n'
+
+
+-----------------------------------------------------------
+		 Counts ------------
+Total Uniprot IDs obtained from DIBS: 772
+Total Uniprot IDs obtained from MFIB: 1329
+Total Uniprot IDs obtained from FuzDB: 404
+Total Uniprot IDs obtained from PDBtot: 513
+Total Uniprot IDs obtained from PDBcdr: 164
+Total entries obtained from DisProt: 12502
+Unique entries obtained from DisProt: 3064
+Total Uniprot IDs obtained from DisProt: 12502
+Unique Uniprot IDs obtained from DisProt: 3064
+Total entries obtained from IDEAL: 217
+Total Uniprot IDs obtained from IDEAL: 1015
+Unique Uniprot IDs obtained from IDEAL: 1015
+Total Uniprot IDs obtained from MobiDB: 512912
+Unique Uniprot IDs obtained from MobiDB: 375909
+Total Uniprot IDs obtained: 529611
+Unique Uniprot IDs obtained: 377348
+Total PDB IDs obtained: 228374
+Unique PDB IDs obtained: 122734
+
+
+-----------------------------------------------------------
+		 Time taken ------------
+Time taken - DIBS: 0.28446340560913086 seconds
+Time taken - MFIB: 0.09708809852600098 seconds
+Time taken - FuzDB: 0.018174171447753906 seconds
+Time taken - PABtot and PDBcdr: 0.19376444816589355 seconds
+Time taken - DisProt: 0.14759349822998047 seconds
+Time taken - IDEAL: 8.385062646865844 minutes
+Time taken - MobiDB: 1.5375798465808233 hours
+Time taken to get Unique Uniprot IDs: 0.14104993912908767 hours
+Time taken to get PDB IDs: 10.516894879142443 hours
+Total Time taken: 10.658051133553187 hours
+
+-----------------------------------------------------------
+UniProt IDs with no PDB IDs = 354114
