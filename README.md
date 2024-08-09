@@ -4,7 +4,7 @@ StrIDR is a database of IDRs, confirmed via experimental or homology-based evide
 Existing databases provide extensive information for IDRs at the sequence level. However, only a tiny fraction of these IDRs are associated with an experimentally determined protein structure. Moreover, the disordered region of interest could be unresolved even if a structure exists.  
 StrIDR is expected to be useful for gaining insights into the dynamics, folding, and interactions of IDRs. It may provide structural data for computational methods to studying IDRs including molecular dynamics (MD) simulations and machine learning (ML).  
 
-![Main_fig](static/Fig_1B.png) #TODO 
+![Main_fig](static/Fig_1B.png)
 
 ## Publication and Website
 Kartik Majila, Shruthi Viswanath, __StrIDR: a database of intrinsically disordered regions of proteins with experimentally resolved structures.__, at DOI: []().
@@ -29,10 +29,10 @@ StrIDR webserver: xxxx
 | FuzDB                | https://fuzdb.org/browse/                    | TSV         | 19 Jul, 2024   |
 | DisProt              | https://disprot.org/download                 | TSV         | 19 Jul, 2024   |
 | IDEAL                | https://www.ideal-db.org/download/current/   | XML         | 19 Jul, 2024   |
+| IDEAL                | https://mobidb.bio.unipd.it/#/swagger        | used API    | 19 Jul, 2024   |
 | PDBtot and PDBcdr    | https://doi.org/10.1016/j.jmb.2020.02.017    | XLSX        | 19 Jul, 2024   |
 
 MobiDB entries are downloaded using the MobiDB API.  
-#TODO MobiDB in table. 
 
 Add the downloaded data files to the `./Database/raw/` directory. The file names must match those specified in `1_download_databases.py`.
 
@@ -45,7 +45,6 @@ This script generates the following files that are used by the downstream script
 1. [Merged_Uniprot_IDs.txt](./Database/Merged_Uniprot_IDs.txt) : file containing UniProt accessions obtained from the aforementioned databases and datasets.
 2. [Merged_PDB_IDs.txt](./Database/Merged_PDB_IDs.txt) : txt file containing PDB IDs for all UniProt accessions.
 
-#TODO we used x cores. But decrease the number of cores to y. 
 
 ### Creating StrIDR database
 ```
