@@ -9,7 +9,7 @@ StrIDR is expected to be useful for gaining insights into the dynamics, folding,
 ## Publication and Website
 Kartik Majila, Shruthi Viswanath, __StrIDR: a database of intrinsically disordered regions of proteins with experimentally resolved structures.__, at DOI: []().
 
-StrIDR webserver: xxxx
+StrIDR webserver: https://isblab.ncbs.res.in/stridr
 
 ## Dependencies:
 * See `requirements.txt` for Python dependencies
