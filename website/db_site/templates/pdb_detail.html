@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+
+{% block body_block %}
+
+
+<br>
+<div>
+	{% if pdb %}
+		<h2>
+			<strong>PDB: {{ pdb.pdb_id }}</strong>&nbsp;
+		<a href="https://www.rcsb.org/structure/{{ pdb.pdb_id }}">
+			<img class="img1"  src="{% static 'pdb.png' %}">
+		</a>
+		</h2>
+		<br>
+
+		{% for uniprot in pdb.uniprot.all %}
+			<div class="label">
+				<p>
+					<strong>UniProt: </strong>
+					{{ uniprot.uni_id }}&nbsp;&nbsp;
+					<a href="https://www.uniprot.org/uniprotkb/{{ uniprot.uni_id }}/entry">
+						<img class="img2" src="{% static 'uniprot.png' %}">
+					</a>
+				</p>
+			</div>
+
+			<hr>
+
+			<div class="label">
+				<p>
+					<strong>Protein name: </strong>
+					{{ uniprot.name }}&nbsp;&nbsp;
+				</p>
+			</div>
+
+<!-- 			<p>
+				<span class="label">
+					<strong>UniProt: </strong>
+				</span class="label">
+				{{ uniprot.uni_id }}&nbsp;&nbsp;
+				<a href="https://www.uniprot.org/uniprotkb/{{ uniprot.uni_id }}/entry">
+					<img class="img2" src="{% static 'uniprot.png' %}">
+				</a>
+			</p>
+			<hr>
+			<p>
+				<span class="label">
+					<strong>Protein name: </strong>
+				</span class="label">
+				{{ uniprot.name }}
+			</p> -->
+
+			<table class="entry-table">
+				<thead>
+					<th>PDB Chain ID <br>(Asym ID)</th>
+					<th>PDB Chain ID <br>(Auth Asym ID)</th>
+					<th>Disordered residues <br>in sequence</th>
+					<th>Disordered residues <br>in structure</th>
+				</thead>
+				<tr>
+					<td>
+						{% for chain_id in uniprot.uniprotpdb_set.first.chain_ids.all %}
+							<p>{{ chain_id.asym_id }}</p>
+						{% endfor %}
+					</td>
+					<td>
+						{% for chain_id in uniprot.uniprotpdb_set.first.chain_ids.all %}
+							<p>{{ chain_id.auth_asym_id }}</p>
+						{% endfor %}
+					</td>
+					<td>
+						{% for disorder in uniprot.uniprotpdb_set.first.disorder_residues.all %}
+							<p>{{ disorder.disorder_in_seq }}</p>
+						{% endfor %}
+					</td>
+					<td>
+						{% for disorder in uniprot.uniprotpdb_set.first.disorder_residues.all %}
+							<p>{{ disorder.disorder_in_struct }}</p>
+						{% endfor %}
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div style="background-color: #f2f2f2; width: 80%; margin-left: 10%;" >
+				<br>
+				<h4>
+				<strong>&nbsp Cross References to Disorder Databases</strong>
+				</h4>
+				<ul class="cross-reference-list">
+
+					{% for cr in uniprot.uniprotpdb_set.first.cross_refs.all %}
+						{% if cr.disprot %}
+							<li>
+								<strong>&nbsp&nbsp DisProt:</strong>
+								<a href="https://disprot.org/{{ cr.disprot }}">{{ cr.disprot }}</a>
+
+							</li>
+							
+						{% endif %}
+						{% if cr.ideal %}
+							<li>
+								<strong>&nbsp&nbsp IDEAL:</strong>
+								<a href="https://www.ideal-db.org/ideal.php?id={{ cr.ideal }}">{{ cr.ideal }}</a>
+							</li>
+							
+						{% endif %}
+						{% if cr.mobidb %}
+							<li>
+								<strong>&nbsp&nbsp MobiDB:</strong>
+								<a href="https://mobidb.bio.unipd.it/{{ cr.mobidb }}">{{ cr.mobidb }}</a>
+							</li>
+							
+						{% endif %}
+					{% endfor %}
+				</ul>
+				<br>
+			</div>
+
+			<br><br>
+
+			{% endfor %}
+		<br>
+		<div class="entryDownloads">
+			<a href="{% url 'database:download_page' filename='Combined_PDBs/'|add:pdb.pdb_id|add:'.cif' %}">
+				<button class="button2">CIF File</button>
+			</a>
+			&nbsp; &nbsp; &nbsp; &nbsp;
+			<a href="{% url 'database:download_page' filename='Mapped_PDBs/'|add:pdb.pdb_id|add:'.tsv' %}">
+				<button class="button2">SIFTS Mapping</button>
+			</a>
+		</div>
+
+		<br><br>
+
+	{% else %}
+		<h3>No record found.</h3>
+	{% endif %}
+</div>
+{% endblock %}
+

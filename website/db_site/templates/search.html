@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% block body_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+<!-- <style>
+	table{
+		width: 90%;
+		border-collapse: collapse;
+	}
+	th{
+		padding: 5px;
+		border-bottom: solid black 2px;
+		border-top: solid black 2px;
+		text-align: center;
+		font-size: 1.25em;
+	}
+	td{
+		text-align: center;
+		font-size: 1em;
+	}
+	tr:nth-child(even){
+		background-color: #f2f2f2;
+	}
+	.table-row:hover{
+		background-color: #a98de3;
+	}
+	.pagination{
+		text-align: center;
+
+</style>
+ -->
+<br>
+
+{% if results %}
+<div style="padding-left: 5%;">
+	<table class="search-table">
+		<thead>
+			<th>PDB ID</th>
+			<th>Uniprot ID</th>
+			<th>Name</th>
+			<th>Auth Asym ID</th>
+			<th>Disorder in structure</th>
+		</thead>
+		{% for result in results %}
+		<tr>
+			<td>
+			<a href="{{ result.get_absolute_url }}"  style="text-decoration: none; color: inherit;">
+				{{ result.pdb_id }}
+			</a>
+		</td>
+			<td>
+				{% for uniprot in result.uniprot.all %}
+					<p>
+						<a href="{{ result.get_absolute_url }}"  style="text-decoration: none; color: inherit;">
+							{{ uniprot.uni_id }}
+						</a>
+					</p>
+				{% endfor %}
+			</td>
+			<td>
+				{% for uniprot in result.uniprot.all %}
+					<p>
+						<a href="{{ result.get_absolute_url }}"  style="text-decoration: none; color: inherit;">
+							{{ uniprot.name }}
+						</a>
+					</p>
+				{% endfor %}
+			</td>
+			<td>
+				{% for uniprot in result.uniprot.all %}
+					<p>
+						{% for chain_id in uniprot.uniprotpdb_set.first.chain_ids.all %}
+							<a href="{{ result.get_absolute_url }}"  style="text-decoration: none; color: inherit;">
+								{{ chain_id.auth_asym_id }}
+							</a>
+						{% endfor %}
+					</p>
+				{% endfor %}
+			</td>
+			<td>
+				{% for uniprot in result.uniprot.all %}
+				<p>
+					{% for disorder in uniprot.uniprotpdb_set.first.disorder_residues.all %}
+						<a href="{{ result.get_absolute_url }}"  style="text-decoration: none; color: inherit;">
+							{{ disorder.disorder_in_struct }} &nbsp;
+						</a>
+					{% endfor %}
+				</p>
+				{% endfor %}
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+
+{% else %}
+	<h1>No record found.</h1>
+{% endif %}
+
+<br>
+<!-- <div class="d-flex justify-content-center">
+	<div class="pagination">
+	    <span class="step-links">
+	    	<nav aria-label="Pagination">
+		    	<ul class="pagination justify-content-center pagination-lg">
+			        {% if page_obj.has_previous %}
+						<li class="page-item">
+							<a class="page-link" href="?page=1">&laquo; First</a>
+						</li>
+
+						<li class="page-item">
+							<a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+						</li>
+			        {% endif %}
+
+			        <li class="page-item">
+			        	<a class="page-link" href="#">{{ page_obj.number }}</a>
+			        </li>
+
+			        {% if page_obj.has_next %}
+			        	<li class="page-item">
+				            <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+			        	</li>
+			        	
+			        	<li class="page-item">
+			        		<a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+			        	</li>
+			        {% endif %}
+		        </ul>
+	        </nav>
+	    </span>
+	</div>
+</div> -->
+{% endblock %}
+
+

@@ -1,0 +1,317 @@
+/* ---------------------------------------------------------- */
+/*Base page styles*/
+html{
+	font-size: 100%;
+}
+
+.jumbotron{
+	background-color: #a98de3;
+}
+
+.stridr-db{
+	font-size: 2vw;
+	color:white;
+}
+
+.main{
+    width: 92%;
+    padding-left: 10%;
+}
+h1, h2, h3, h4, h5, h6, p, table, td, th{
+	font-family: verdana;
+}
+
+
+.nav-link{
+	color: white;
+}
+
+.base-footer{
+	background-color: #a98de3;
+	width: 100%; 
+	bottom: 0px;
+	padding: 10px;
+	display: flex;
+/*	align-items: center;*/
+	justify-content: space-between;
+}
+
+
+.base-footer p{
+	color: white;
+	text-align: left;
+	margin-left: 10px;
+	padding: 0;
+}
+
+
+@media screen and (max-width: 1920px) {
+    h1{
+        font-size: 2.5vw;
+    }
+    h2{
+        font-size: 2vw;
+    }
+    h3{
+        font-size: 1.75vw;
+    }
+    h4{
+        font-size: 1.5vw;
+    }
+    h5{
+        font-size: 1.25vw;
+    }
+    h6{
+        font-size: 1.1vw;
+    }
+    p {
+        font-size: 1vw;
+    }
+}
+
+
+@media screen and (max-width: 1440px) {
+    h1{
+        font-size: 2vw;
+    }
+    h2{
+        font-size: 1.75vw;
+    }
+    h3{
+        font-size: 1.5vw;
+    }
+    h4{
+        font-size: 1.25vw;
+    }
+    h5{
+        font-size: 1.15vw;
+    }
+    h6{
+        font-size: 1vw;
+    }
+    p {
+        font-size: 0.9vw;
+    }
+}
+
+
+
+/* ---------------------------------------------------------- */
+/*Home page styles*/
+.stridr-acronym{
+	text-align: center;
+	font-size: 5vw;
+	color:#a98de3;
+}
+.stridr-acronym h1{
+	font-size: 5vw;
+}
+.stridr-acronym p{
+	font-size: 0.75vw;
+}
+
+.home-text{
+	text-align: center;
+	font-size: 1.1vw;
+}
+
+
+.download{
+	text-align: center;
+}
+
+.search-button{
+	transition: transform 0.2s ease;
+	width:100px;
+	font-size:16px;
+	background-color:#a98de3;
+	color: white;
+	border: 0px;
+	height: 40px;
+}
+
+.search-button:hover{
+	transform: scale(1.1);
+}
+
+.db-logos:hover{
+	transform: scale(1.1);
+}
+
+
+.container{
+	width: 100%;
+	max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* flex: flex-grow flex-shrink flex-basis */
+	/*  flex-grow: grow to fill extra space (1) or not (0) */
+	/*  flex-shrink: shrink if not enough space (1) or not (0) */
+	/*  flex-basis: initial size of the element */
+    gap: 10px;               /* Space between the flex items */
+    margin: 0 auto;          /* Center container horizontally */
+    padding: 10px;           /* Optional padding for container */
+}
+
+
+.stats hr{
+	width: 100%;
+
+}
+.stats{
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+}
+.stats h4, .stats p {
+    text-align: center;
+}
+.plot-img {
+    width: 100%;
+    max-width: 60%;           /* Ensures the image does not exceed its container */
+    height: auto;             /* Maintains aspect ratio */
+    margin-left: 10%;
+}
+
+.references {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 10px;
+}
+.references hr{
+	width: 100%;
+}
+.references h4, .references p {
+    text-align: center;
+}
+.data-img{
+    width: 25%;
+    margin: 0 10px;          /* Margin for spacing between images */
+}
+.liscence-img{
+    width: 20%;
+    margin-right: 10px;      /* Margin to the right of the image */
+}
+
+
+
+
+/* ---------------------------------------------------------- */
+/*Browse page styles*/
+table{
+	width: 90%;
+	border-collapse: collapse;
+}
+th{
+	padding: 5px;
+	border-bottom: solid black 2px;
+	border-top: solid black 2px;
+	text-align: center;
+	font-size: 1.15vw;
+}
+td{
+	text-align: center;
+	font-size: 1vw;
+}
+tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+.table-row:hover{
+	background-color: #a98de3;
+}
+
+.pagination{
+	text-align: center;
+}
+
+/* ---------------------------------------------------------- */
+/*Browse and Entry page styles*/
+.label{
+	font-size: 1.2vw;
+	margin-left: 0;
+}
+
+.entry-table{
+	width: 80%;
+	border-collapse: collapse;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+hr{
+	border-color: #a98de3;
+	border-width: 5px;
+	margin-top: 1%;
+}
+
+.img1{
+	width: 8%;
+}
+.img2{
+	width: 7%;
+}
+
+.button2{
+	background-color: #a98de3;
+	color: white;
+	font-size: 1.25vw;
+	border: 0;
+	text-align: center;
+	width: 12%;
+	text-align: center;
+	transform: translateX(40px);
+}
+.entryDownloads{
+	text-align: center;
+}
+
+.cross-reference-list{
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.cross-reference-list li {
+	margin-right: 20%;
+	font-size: 1vw;
+}
+
+
+/* ---------------------------------------------------------- */
+/*Search page styles*/
+.search-table{
+	width: 80%;
+	border-collapse: collapse;
+	margin: 0 auto;
+	text-align: center;
+}
+.search-table tbody tr:hover{
+	background-color: #a98de3;
+}
+
+
+/* ---------------------------------------------------------- */
+/*Downloads page styles*/
+
+.download{
+	text-align: center;
+}
+
+.download table{
+	width: 60%;
+	padding: 5px;
+	border-collapse: collapse;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+.download img{
+	width: 80%;
+	margin-left: 10%;
+}

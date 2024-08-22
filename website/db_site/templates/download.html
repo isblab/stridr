@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% block body_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+<!-- <style>
+	table{
+		width: 60%;
+		padding: 5px;
+		border-collapse: collapse;
+		margin: 0 auto;
+		text-align: center;
+	}
+	th{
+		padding: 5px;
+		border-top: solid black 2px;
+		border-bottom: solid black 2px;
+		text-align: center;
+		font-size: 20px;
+	}
+	tr{
+		font-size: 18px;
+	}
+	tr:nth-child(even){
+		background-color: #f2f2f2;
+	}
+	.table-row:hover{
+		background-color: #a98de3;
+	}
+	.download{
+		text-align: center;
+	}
+</style> -->
+
+<div class="download">
+	<br>
+	<h5>The current version of the StrIDR is available to download as a JSON file. 
+		The table below also contains all the CIF files and the SIFTS mapping for all entries.
+	</h5>
+	<br>
+	<table>
+		<thead>
+			<th>File</th>
+			<th>Data</th>
+		</thead>
+		<tr>
+			<td>StrIDR dataset Version 1.0</td>
+			<td>
+				<a href="{% url 'database:download_page' filename='StrIDR_database.json' %}">JSON</a>
+			</td>
+		</tr>
+		<tr>
+			<td>All UniProt sequences in StrIDR</td>
+			<td>
+				<a href="{% url 'database:download_page' filename='Uniprot_seq.json' %}">JSON</a>
+			</td>
+		</tr>
+		<tr>
+			<td>CIF files for all entries in StrIDR</td>
+			<td>
+				<a href="{% url 'database:download_page' filename='Combined_PDBs.zip' %}">GZIP</a>
+			</td>
+		</tr>
+		<tr>
+			<td>SIFTS Mapping for all entries in StrIDR</td>
+			<td>
+				<a href="{% url 'database:download_page' filename='Mapped_PDBs.zip' %}">GZIP</a>
+			</td>
+		</tr>
+	</table>
+
+
+<br><br>
+
+<h3>
+	<strong>StrIDR creation workflow</strong>
+</h3>
+<br>
+<img src="{% static 'Fig_1.png' %}" class="workflow-img">
+<br><br>
+
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% block body_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+
+<br>
+<!-- Database acronym -->
+<div class="stridr-acronym">
+	<h1>
+		<strong>StrIDR</strong>
+	</h1>
+<h5>
+	<strong>Structures of Intrinsically Disordered Regions</strong>
+</h5>
+<p>
+	Version: 1.0  Release_date: 08_2024
+	<br>
+	A database of intrinsically disordered regions of proteins (IDRs) resolved in structure.
+</p>
+</div>
+
+
+<!-- Search bar -->
+<form method="GET" action="{% url 'database:search_view' %}" style="text-align: center;">
+	{% csrf_token %}
+	<div>
+	{{ form.search_input }}
+
+	<button class="search-button" type="submit">
+		<strong>SEARCH</strong>
+	</button>
+	</div>
+</form>
+<br>
+
+<!-- <p style="font-size: 2.5vw;">Hello</p>
+<p style="font-size: 2vw;">Hello</p>
+<p style="font-size: 1.75vw;">Hello</p>
+<p style="font-size: 1.5vw;">Hello</p>
+<p style="font-size: 1.25vw;">Hello</p>
+<p style="font-size: 1.15vw;">Hello</p>
+<p style="font-size: 1vw;">Hello</p> -->
+
+<p class="home-text">
+	StrIDR is a database of IDRs, confirmed <i>via</i> experimental or homology-based evidence, that are resolved in experimentally determined structures.
+</p>
+<p class="home-text">
+	Existing databases provide extensive information for IDRs at the sequence level.
+	However, only a tiny fraction of these IDRs are associated with an experimentally determined protein structure.
+	Moreover, the disordered region of interest could be unresolved even if a structure exists.
+</p>
+<p class="home-text">
+	StrIDR is expected to be useful for gaining insights into the dynamics, folding, and interactions of IDRs. It may
+	provide structural data for computational methods to studying IDRs including molecular dynamics (MD) simulations and machine learning (ML). 
+</p>
+
+<p class="home-text">
+	We obtain disorder annotations, sequence, and structure information from the following databases:
+</p>
+
+<!-- Source databases -->
+<hr>
+<a href="https://dibs.enzim.ttk.mta.hu/">
+	<img class="db-logos" src="{% static 'DIBS.png' %}" style="width: 6%; margin-right: 3%; margin-left: 4%; max-width: 100%;">
+</a>
+<a href="https://mfib.pbrg.hu/">
+	<img class="db-logos" src="{% static 'MFIB.png' %}" style="width: 6%; margin-right: 3%; max-width: 100%;">
+</a>
+<a href="https://fuzdb.org/">
+	<img class="db-logos" src="{% static 'FuzDB.png' %}" style="width: 6%; margin-right: 3%; max-width: 100%;">
+</a>
+<a href="https://disprot.org/">
+	<img class="db-logos" src="{% static 'Disprot.png' %}" style="width: 8%; margin-right: 3%; max-width: 100%;">
+</a>
+<a href="https://mobidb.bio.unipd.it/">
+	<img class="db-logos" src="{% static 'MobiDB.png' %}" style="width: 8%; margin-right: 3%; max-width: 100%;">
+</a>
+<a href="https://www.ideal-db.org/">
+	<img class="db-logos" src="{% static 'Ideal.png' %}" style="width: 8%; margin-right: 3%; max-width: 100%;">
+</a>
+<a href="https://www.rcsb.org/">
+	<img class="db-logos" src="{% static 'pdb.png' %}" style="width: 8%; margin-right: 3%; max-width: 100%;">
+</a>
+<a href="https://www.uniprot.org/">
+	<img class="db-logos" src="{% static 'uniprot.png' %}" style="width: 8%; margin-right: 3%; max-width: 100%;">
+</a>
+<a href="https://www.ebi.ac.uk/pdbe/docs/sifts/">
+	<img class="db-logos" src="{% static 'SIFTS.png' %}" style="width: 8%; margin-right: 3%; max-width: 100%;">
+</a>
+
+<br><br>
+
+
+<!-- Statistics, references, and data access -->
+<div class="container">
+	<div class="stats">
+		<h4>
+			<strong>Statistics</strong>
+		</h4>
+		<hr>
+		<p>
+			<strong>Experimental techniques for structure determination of IDR proteins in StrIDR.</strong>
+		</p>
+		<img src="{% static 'ExptSource_Plot.png' %}" class="plot-img">
+		<br>
+
+		<p>
+			<strong>StrIDR contains</strong>
+			&nbsp;&nbsp; 84598 PDB entries &nbsp;&nbsp;&nbsp; 303397 IDR chains
+			&nbsp;&nbsp;&nbsp; 22508 Unique UniProt accessions.
+		</p>
+	</div>
+
+	<div class="references">
+		<h4>
+			<strong>How to Cite</strong>
+		</h4>
+		<hr>
+		<p>
+			Majila K., Viswanath S. StrIDR: a database of intrinsically disordered regions of proteins with experimentally resolved structures
+			<br><br>
+			<strong>Contact us at: </strong> shruthiv AT ncbs DOT res DOT in
+		</p>
+		
+		<h4>
+			<strong>Data access</strong>
+		</h4>
+		<hr>
+		<p>
+			<a href="https://github.com/isblab/stridr_disobind">
+				<img src="{% static 'Github.png' %}" class="data-img">
+			</a>
+<!-- 			<a href="">
+				<img src="{% static 'Zenodo.png' %}" class="data-img">
+			</a> -->
+		</p>
+		<br>
+
+		
+		
+		<div class="license-img">
+			<p>
+				<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+					<img src="{% static 'CCLiscence.png' %}" class="liscence-img">
+				</a>
+				This work is licensed under a 
+				<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+					Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+				</a>				
+			</p>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+

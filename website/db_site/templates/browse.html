@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% block body_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+
+
+<br>
+
+<!-- Search bar on top of table -->
+<div style="padding-left: 7%;">
+	<form method="GET" action="{% url 'database:search_view' %}">
+		{% csrf_token %}
+		{{ form.search_input }}
+		<button class="search-button" type="submit">
+			<strong>SEARCH</strong>
+		</button>
+	</form>
+</div>
+
+{% if entry_list %}
+<br>
+<!-- Table of all entries in StrIDR -->
+<div style="padding-left: 5%;">
+	<table>
+		<thead >
+			<th>PDB ID</th>
+			<th>Uniprot ID</th>
+			<th>Protein Name</th>
+			<th> PDB Chain ID <br>(Auth Asym ID)</th>
+			<th>Disordered residues <br>in structure</th>
+		</thead>
+		{% for entry in entry_list %}
+			<tr class="table-row">
+				<td>
+					<p>
+						<a href="{{ entry.get_absolute_url }}" style="text-decoration: none; color: inherit;">
+							{{ entry.pdb_id }}
+						</a>
+					</p>
+				</td>
+				<td>
+					{% for uniprot in entry.uniprot.all %}
+						<p>
+							<a href="{{ entry.get_absolute_url }}" style="text-decoration: none; color: inherit;">
+								{{ uniprot.uni_id }}
+							</a>
+						</p>
+					{% endfor %}
+				</td>
+				<td>
+					{% for uniprot in entry.uniprot.all %}
+						<a href="{{ entry.get_absolute_url }}" style="text-decoration: none; color: inherit;">
+							<p>{{ uniprot.name }}</p>
+						</a>
+					{% endfor %}
+				</td>
+				<td>
+					{% for uniprot in entry.uniprot.all %}
+						<p>
+							{% for chain_id in uniprot.uniprotpdb_set.first.chain_ids.all %}
+							{{ chain_id.auth_asym_id }}
+							{% endfor %}
+						</p>
+					{% endfor %}
+				</td>
+				<td>
+					{% for uniprot in entry.uniprot.all %}
+					<p>
+						{% for disorder in uniprot.uniprotpdb_set.first.disorder_residues.all %}
+							{{ disorder.disorder_in_struct }} &nbsp;
+						{% endfor %}
+					</p>
+					{% endfor %}
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+</div>
+{% else %}
+	<p>No records found.</p>
+{% endif %}
+
+
+<br>
+<div class="d-flex justify-content-center">
+	<div class="pagination">
+	    <span class="step-links">
+	    	<nav aria-label="Pagination">
+		    	<ul class="pagination justify-content-center pagination-lg">
+			        {% if page_obj.has_previous %}
+						<li class="page-item">
+							<a class="page-link" href="?page=1">&laquo; First</a>
+						</li>
+
+						<li class="page-item">
+							<a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+						</li>
+			        {% endif %}
+
+			        <li class="page-item">
+			        	<a class="page-link" href="#">{{ page_obj.number }}</a>
+			        </li>
+
+			        {% if page_obj.has_next %}
+			        	<li class="page-item">
+				            <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+			        	</li>
+			        	
+			        	<li class="page-item">
+			        		<a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+			        	</li>
+			        {% endif %}
+		        </ul>
+	        </nav>
+	    </span>
+	</div>
+</div>
+{% endblock %}
+
+
+

@@ -28,7 +28,7 @@ StrIDR webserver: https://isblab.ncbs.res.in/stridr
 | MFIB                 | https://mfib.pbrg.hu/downloads.php           | XML         | 19 Jul, 2024   |
 | FuzDB                | https://fuzdb.org/browse/                    | TSV         | 19 Jul, 2024   |
 | DisProt              | https://disprot.org/download                 | TSV         | 19 Jul, 2024   |
-| IDEAL                | https://www.ideal-db.org/download/current/   | XML         | 19 Jul, 2024   |
+| IDEAL                | https://www.ideal-db.org/download/archive/   | XML         | 19 Jul, 2024   |
 | IDEAL                | https://mobidb.bio.unipd.it/#/swagger        | used API    | 19 Jul, 2024   |
 | PDBtot and PDBcdr    | https://doi.org/10.1016/j.jmb.2020.02.017    | XLSX        | 19 Jul, 2024   |
 
@@ -74,7 +74,7 @@ python manage.py migrate
 ## Information
 __Author(s):__ Kartik Majila, Shruthi Viswanath
 
-__Date__: April 7th, 2023
+__Date__: August 22, 2023
 
 __License:__ [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
