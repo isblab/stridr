@@ -29,7 +29,7 @@ StrIDR webserver: https://isblab.ncbs.res.in/stridr
 | FuzDB                | https://fuzdb.org/browse/                    | TSV         | 19 Jul, 2024   |
 | DisProt              | https://disprot.org/download                 | TSV         | 19 Jul, 2024   |
 | IDEAL                | https://www.ideal-db.org/download/archive/   | XML         | 19 Jul, 2024   |
-| IDEAL                | https://mobidb.bio.unipd.it/#/swagger        | used API    | 19 Jul, 2024   |
+| MobiDB               | https://mobidb.bio.unipd.it/#/swagger        | used API    | 19 Jul, 2024   |
 | PDBtot and PDBcdr    | https://doi.org/10.1016/j.jmb.2020.02.017    | XLSX        | 19 Jul, 2024   |
 
 MobiDB entries are downloaded using the MobiDB API.  
