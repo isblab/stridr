@@ -74,7 +74,7 @@ python manage.py migrate
 ## Information
 __Author(s):__ Kartik Majila, Shruthi Viswanath
 
-__Date__: August 22, 2023
+__Date__: August 22, 2024
 
 __License:__ [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
