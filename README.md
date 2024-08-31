@@ -7,7 +7,7 @@ StrIDR is expected to be useful for gaining insights into the dynamics, folding,
 ![Main_fig](static/Fig_1B.png)
 
 ## Publication and Website
-Kartik Majila, Shruthi Viswanath, __StrIDR: a database of intrinsically disordered regions of proteins with experimentally resolved structures.__, at DOI: []().
+Kartik Majila, Shruthi Viswanath, __StrIDR: a database of intrinsically disordered regions of proteins with experimentally resolved structures.__, at DOI: [https://doi.org/10.1101/2024.08.22.609111](https://doi.org/10.1101/2024.08.22.609111).
 
 StrIDR webserver: https://isblab.ncbs.res.in/stridr
 
@@ -82,4 +82,4 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 
 __Parallelizeable:__ Yes
 
-__Publications:__  Majila, K. and Viswanath S. StrIDR: a database of intrinsically disordered regions of proteins with experimentally resolved structures. DOI: []().
+__Publications:__  Majila, K. and Viswanath S. StrIDR: a database of intrinsically disordered regions of proteins with experimentally resolved structures. DOI: [https://doi.org/10.1101/2024.08.22.609111](https://doi.org/10.1101/2024.08.22.609111).
